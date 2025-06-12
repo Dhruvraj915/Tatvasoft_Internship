@@ -62,8 +62,7 @@
               "RelativeToolTip": "Mission\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-12T07:35:58.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T07:35:58.512Z"
             },
             {
               "$type": "Document",
@@ -131,8 +130,8 @@
               "Title": "MissionRepository.cs",
               "DocumentMoniker": "D:\\Code\\Tatvasoft Intership\\Days\\DAY13\\Mission.Repositories\\Repositories\\MissionRepository.cs",
               "RelativeDocumentMoniker": "Mission.Repositories\\Repositories\\MissionRepository.cs",
-              "ToolTip": "D:\\Code\\Tatvasoft Intership\\Days\\DAY13\\Mission.Repositories\\Repositories\\MissionRepository.cs*",
-              "RelativeToolTip": "Mission.Repositories\\Repositories\\MissionRepository.cs*",
+              "ToolTip": "D:\\Code\\Tatvasoft Intership\\Days\\DAY13\\Mission.Repositories\\Repositories\\MissionRepository.cs",
+              "RelativeToolTip": "Mission.Repositories\\Repositories\\MissionRepository.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAewJ4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T06:13:43.926Z",
