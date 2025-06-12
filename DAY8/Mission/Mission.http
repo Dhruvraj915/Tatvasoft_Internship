@@ -1,6 +1,0 @@
-@Mission_HostAddress = http://localhost:5185
-
-GET {{Mission_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
