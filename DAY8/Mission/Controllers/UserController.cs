@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mission.Entity.Entities;
+using Mission.Entities;
+using Mission.Entities.Models;
 using Mission.Services.IServices;
+using Npgsql;
 
 namespace Mission.Controllers
 {
@@ -11,7 +13,6 @@ namespace Mission.Controllers
         private readonly IUserService _userService = userService;
 
         [HttpDelete]
-        [Route("Delete")]
         public async Task<IActionResult> DeleteUser([FromQuery] int id)
         {
             try
@@ -26,7 +27,6 @@ namespace Mission.Controllers
         }
 
         [HttpGet]
-        [Route("GetById")]
         public async Task<IActionResult> GetUserById([FromQuery] int id)
         {
             try
@@ -39,5 +39,20 @@ namespace Mission.Controllers
                 return BadRequest(new ResponseResult() { Data = null, Result = ResponseStatus.Error, Message = "Failed to find user." });
             }
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateUser([FromQuery] int id, [FromBody] UserResponseModel model)
+        {
+            try
+            {
+                var res = await _userService.UpdateUser(id, model);
+                return Ok(new ResponseResult() { Data = res, Result = ResponseStatus.Success, Message = "User updated successfully." });
+            }
+            catch
+            {
+                return BadRequest(new ResponseResult() { Data = null, Result = ResponseStatus.Error, Message = "Failed to update user." });
+            }
+        }
+
     }
 }

@@ -1,7 +1,5 @@
-﻿using Mission.Entity.Entities;
-using Mission.Entity.Model;
-
-
+﻿using Mission.Entities;
+using Mission.Entities.Models;
 namespace Mission.Services.IServices
 {
     public interface ILoginService
@@ -11,6 +9,5 @@ namespace Mission.Services.IServices
         LoginUserResponseModel UserLogin(LoginUserRequestModel model);
 
         Task<string> RegisterUser(RegisterUserRequestModel registerUserRequest);
-
     }
 }

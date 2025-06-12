@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Mission.Entity.Entities;
-using Mission.Entity.Model;
+﻿using Mission.Entities;
+using Mission.Entities.Models;
 using Mission.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Mission.Controllers
 {
@@ -10,12 +11,12 @@ namespace Mission.Controllers
     public class LoginController(ILoginService loginService, IWebHostEnvironment hostingEnvironment) : ControllerBase
     {
         private readonly ILoginService _loginService = loginService;
-        private readonly IWebHostEnvironment _webHostEnvironment = hostingEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment = hostingEnvironment;
         ResponseResult result = new ResponseResult();
 
         [HttpPost]
         [Route("LoginUser")]
-        public ResponseResult Login(LoginUserRequestModel model)
+        public ResponseResult LoginUser(LoginUserRequestModel model)
         {
             try
             {
@@ -29,6 +30,7 @@ namespace Mission.Controllers
             }
             return result;
         }
+
 
         [HttpPost]
         [Route("Register")]

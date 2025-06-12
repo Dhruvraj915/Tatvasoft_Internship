@@ -1,4 +1,4 @@
-﻿using Mission.Entity.Model;
+﻿using Mission.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,6 @@ namespace Mission.Repositories.IRepositories
     public interface ILoginRepository
     {
         LoginUserResponseModel LoginUser(LoginUserRequestModel model);
-
-
         Task<string> RegisterUser(RegisterUserRequestModel registerUserRequest);
-
     }
 }

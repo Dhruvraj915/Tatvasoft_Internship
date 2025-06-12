@@ -1,4 +1,9 @@
-﻿using Mission.Entity.Model;
+﻿using Mission.Entities.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Mission.Repositories.IRepositories
 {
@@ -6,5 +11,7 @@ namespace Mission.Repositories.IRepositories
     {
         Task<string> DeleteUser(int id);
         Task<UserResponseModel> GetUserById(int id);
+        Task<UserResponseModel> UpdateUser(int id, UserResponseModel model);
+
     }
 }

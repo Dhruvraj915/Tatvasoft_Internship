@@ -1,11 +1,6 @@
-﻿using Mission.Entity.Model;
+﻿using Mission.Entities.Models;
 using Mission.Repositories.IRepositories;
 using Mission.Services.IServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mission.Services.Services
 {
@@ -23,5 +18,11 @@ namespace Mission.Services.Services
         {
             return await _userRepository.GetUserById(id);
         }
+
+        public async Task<UserResponseModel> UpdateUser(int id, UserResponseModel model)
+        {
+            return await _userRepository.UpdateUser(id, model);
+        }
+
     }
 }

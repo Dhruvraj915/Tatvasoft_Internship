@@ -1,9 +1,5 @@
-﻿using Mission.Entity.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Mission.Entities.Models;
 
 namespace Mission.Services.IServices
 {
@@ -11,5 +7,8 @@ namespace Mission.Services.IServices
     {
         Task<UserResponseModel> GetUserById(int id);
         Task<string> DeleteUser(int id);
+
+        Task<UserResponseModel> UpdateUser(int id, UserResponseModel model);
     }
+
 }

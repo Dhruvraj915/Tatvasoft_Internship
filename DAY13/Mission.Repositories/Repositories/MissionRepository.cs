@@ -152,11 +152,12 @@ namespace Mission.Repositories.Repositories
                 _dbContext.MissionApplications.Add(missionApplication);
 
                 missionInDb.TotalSheets--;
+
                 _dbContext.SaveChanges();
 
             }
-            catch (Exception ex)
-            { 
+            catch(Exception ex)
+            {
                 throw;
             }
 

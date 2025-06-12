@@ -1,13 +1,13 @@
-﻿using Mission.Entity.Entities;
-using Mission.Entity.Model;
-using Mission.Repositories.Helpers;
+﻿using Mission.Services.IServices;
+using System;
 using Mission.Repositories.IRepositories;
-using Mission.Services.IServices;
+using Mission.Entities;
+using Mission.Entities.Models;
+using Mission.Repositories.Helpers;
 
-
-namespace Mission.Services.Services
+namespace Mission.Services
 {
-    public class LoginService(ILoginRepository loginRepository, JwtService jwtService): ILoginService
+    public class LoginService(ILoginRepository loginRepository, JwtService jwtService) : ILoginService
     {
         private readonly ILoginRepository _loginRepository = loginRepository;
         private readonly JwtService _jwtService = jwtService;
@@ -17,7 +17,7 @@ namespace Mission.Services.Services
         {
             var userObj = UserLogin(model);
 
-            if(userObj.Message.ToString() == "Login successfully")
+            if (userObj.Message.ToString() == "Login Successfully")
             {
                 result.Message = userObj.Message;
                 result.Result = ResponseStatus.Success;
@@ -30,6 +30,7 @@ namespace Mission.Services.Services
             }
             return result;
         }
+
         public LoginUserResponseModel UserLogin(LoginUserRequestModel model)
         {
             return _loginRepository.LoginUser(model);

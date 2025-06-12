@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Mission.Controllers.LoginController",
-    "Method": "Login",
+    "Method": "LoginUser",
     "RelativePath": "api/Login/LoginUser",
     "HttpMethod": "POST",
     "IsController": true,
@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "Mission.Entity.Model.LoginUserRequestModel",
+        "Type": "Mission.Entities.Models.LoginUserRequestModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Mission.Entity.Entities.ResponseResult",
+        "Type": "Mission.Entities.ResponseResult",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "registerUserRequest",
-        "Type": "Mission.Entity.Model.RegisterUserRequestModel",
+        "Type": "Mission.Entities.Models.RegisterUserRequestModel",
         "IsRequired": true
       }
     ],
@@ -44,7 +44,7 @@
   {
     "ContainingType": "Mission.Controllers.UserController",
     "Method": "DeleteUser",
-    "RelativePath": "api/User/Delete",
+    "RelativePath": "api/User",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -60,7 +60,7 @@
   {
     "ContainingType": "Mission.Controllers.UserController",
     "Method": "GetUserById",
-    "RelativePath": "api/User/GetById",
+    "RelativePath": "api/User",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -74,24 +74,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mission.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "Mission.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Mission.WeatherForecast, Mission, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "model",
+        "Type": "Mission.Entities.Models.UserResponseModel",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
   }
 ]

@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Mission.Repositories.Helpers
 {
@@ -13,10 +17,10 @@ namespace Mission.Repositories.Helpers
 
         private readonly IConfiguration _configuration;
 
-        public JwtService (IConfiguration configuration)
+        public JwtService(IConfiguration configuration)
         {
             _configuration = configuration;
-            SecretKey = configuration.GetSection("JwtConfig").GetSection("key").Value;
+            SecretKey = configuration.GetSection("JwtConfig").GetSection("Key").Value;
             TokenDuration = int.Parse(configuration.GetSection("JwtConfig").GetSection("Duration").Value);
         }
 
@@ -47,6 +51,5 @@ namespace Mission.Repositories.Helpers
 
             return new JwtSecurityTokenHandler().WriteToken(jwtToken);
         }
-
-        }
+    }
 }
